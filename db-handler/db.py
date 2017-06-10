@@ -15,7 +15,6 @@ MYSQL_PASSWD = 'root'
 MYSQL_DB = 'zhaopin'
 MYSQL_USRE_TABLE_NAME = 'user'
 
-# ---------------------建立虚拟疾病的属性，即添加icon、iconColor字段到tag_property中---2----------------
 user = None
 resume = None
 
