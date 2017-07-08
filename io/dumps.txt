@@ -1,0 +1,14 @@
+(dp0
+S'addrdess'
+p1
+S'\xe5\x8c\x97\xe4\xba\xac\xe6\x98\x8c\xe5\xb9\xb3'
+p2
+sS'age'
+p3
+S'23'
+p4
+sS'name'
+p5
+S'ljm'
+p6
+s.
