@@ -439,3 +439,74 @@ stu = Student(23,'ljm',100)
 print(json.dumps(stu,default=student_to_dict))
 
 ```
+## 正则表达式
+
+### re模块
+
+python提供的re模块，包括所有正则表达式的功能。
+
+- 写法
+```
+s = r'ABC\-001'
+```
+- 判断是否匹配正则
+```
+if re.match(r'正则表达式', test):
+    print('ok')
+else:
+    print('failed')
+
+```
+
+## python常用内建模块
+
+### datetime是python处理日期和时间的标准库
+
+- 获取当前日期和时间
+
+```
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from datetime import datetime
+
+now = datetime.now()
+print(now)
+
+```
+- 获取指定日期和时间
+
+```
+dt = datetime(1993,7,9,11,11)
+print(dt)
+
+```
+- 将datetime类型转换成timestamp
+
+```
+dt = datetime(1993,7,9,11,11)
+tsp = dt.timestamp()
+```
+
+- timestamp转换成datetime
+
+```
+tsp = 1499820667.0
+dt = datetime.fromtimestamp(tsp)
+
+```
+- str转换成datetime
+
+```
+dt = datetime.strptime('1993-07-09 11:11:11','%Y-%m-%d %H:%M:%S')
+print(dt)
+
+```
+- datetime转换成str
+
+```
+dt = datetime.now()
+str_time = dt.strftime(dt)
+print(str_time)
+
+```
