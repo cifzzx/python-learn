@@ -6,7 +6,7 @@ from datetime import datetime
 now = datetime.now()
 print(now)
 
-dt = datetime.strptime('1993-08-25 11:11:11','%Y-%m-%d %H:%M:%S')
+dt = datetime.strptime('1993-08-25 11:11:11', '%Y-%m-%d %H:%M:%S')
 print(dt)
 
 dtm = datetime.now()

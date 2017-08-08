@@ -73,3 +73,99 @@ url = "http://127.0.0.1:5000/sigin/get"
 response = urllib2.urlopen(url+'?'+data)
 print response.read()
 ```
+
+### 设置Headers
+
+请求头里包含了很多信息，如文件编码、压缩格式、请求的agent（请求者）等。
+
+```
+import urllib
+import urllib2
+
+url = "http://www.server.com/login"
+uset_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5)"
+values = {"username": "ljm", "password": "xxx"}
+header = {"User-Agent": uset_agent}
+data = urllib.urlencode(values)
+request = urllib2.Requst(url, data, header)
+response = urllib2.urlopen(requst)
+page = response.read()
+
+```
+这样就设置了一个headers。
+
+对付`防盗链`,服务器会识别headers中的referer是不是它自己，如果不是，有的服务器也不会响应，所以还可以在headers中加入referer
+
+```
+header = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5)", "Referer": "http://www.server.com/login"
+}
+```
+
+另外headers的一些属性，需要特别注意一下:
+
+- User-Agent: 有些服务器或者proxy会通过该值来判断是否是浏览器发出来的请求。
+- Content-type: 在使用REST接口时，服务器会检查该值，用来确定HTTP Body中的内容该怎么解析。
+- application/xml: 在xml RPC，如RESTful/SOAP调用时使用。
+- application/json: 在Json RPC调用时使用。
+- application/x-www-form-urlencoded ： 浏览器提交 Web 表单时使用。
+
+在使用服务器提供的RESTful或SOAP服务时，Content-type设置错误会导致服务器拒绝服务。
+
+### Proxy（代理）设置
+
+urllib2默认会使用环境变量http_proxy来设置HTTP Proxy。假如一个网址它会检测某一段时间某个IP的访问次数，如果访问次数过多，就会禁止你访问。所以可以设置一些代理服务器来搞事情，每隔一段时间，换个代理服务器请求，网站君却不知道谁在搞事情。
+
+```
+import urllib2
+enable_proxy = True
+proxy_handler = urllib2.ProxyHandler({"http": "http://some-proxy.com:8080"})
+null_proxy_handler = urllib2.ProxyHandler({})
+
+if enable_handler:
+    opener = urllib2.build_opener(proxy_handler)
+else:
+    opener = urllib2.build_opener(null_proxy_handler)
+urllib2.install_opener(opener)
+
+```
+
+### timeout设置
+
+urlopen 的timeout参数，可以设置等待多久超时，为了解决一些网站实在过慢而造成的影响。
+
+```
+import urllib2
+
+response = urllib2.urlopen("http://www.baidu.com", timeout=10)
+```
+
+```
+import urllib2
+
+response = urllib2.urlopen("http://www.baidu.com", data, 10)
+```
+
+### 使用HTTP的PUT和DELETE方法
+
+http 协议有六种请求方法，get,head,put,delete,post,options，我们有时候需要用到 PUT 方式或者 DELETE 方式请求。
+
+```
+import urllib2
+request = urllib2.Requst(url, data=data)
+request.get_method = lambda: 'PUT' # or 'DELETE'
+response = urllib2.urlopen(request)
+```
+
+### 使用DebugLog
+
+可以通过下面的方法把DebugLog打开，这样收发包的内容就会在屏幕上打印出来，方便调试，这个也不太常用，仅提一下
+
+```
+import urllib2
+httpHandler = urllib2.HTTPHandler(debuglevel=1)
+httpsHandler = urllib2.HTTPSHandler(debuglevel=1)
+opener = urllib2.build_opener(httpHandler, httpsHandler)
+urllib2.install_opener(opener)
+response = urllib2.urlopen('http://www.baidu.com')
+```

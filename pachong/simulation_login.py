@@ -13,5 +13,5 @@ import urllib2
 values = {"username": "ljm", "password": "123"}
 data = urllib.urlencode(values)
 url = "http://127.0.0.1:5000/sigin/get"
-response = urllib2.urlopen(url+'?'+data)
-print response.read()
+response = urllib2.urlopen(url + '?' + data)
+print(response.read())
