@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$USER_HOME$/youhujia/wk/magic-era/knowledge-center/evaluation/question_bundle_import.py" description="completionMappingLogic" line="121" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f6b401bd-ad5e-4ca2-a042-a1ba76f3ff35" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/python-learn.iml" afterPath="$PROJECT_DIR$/.idea/python-learn.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/machine-learning/standford-university_machine-learing_note.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db-handler/build_sql.py" afterPath="$PROJECT_DIR$/db-handler/build_sql.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db-handler/company.txt" afterPath="$PROJECT_DIR$/db-handler/company.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db-handler/txt_to_json.py" afterPath="$PROJECT_DIR$/db-handler/txt_to_json.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/function/function_program.py" afterPath="$PROJECT_DIR$/function/function_program.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pachong/note/note.md" afterPath="$PROJECT_DIR$/pachong/note/note.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pachong/simulation_login.py" afterPath="$PROJECT_DIR$/pachong/simulation_login.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pachong/use_bs4.py" afterPath="$PROJECT_DIR$/pachong/use_bs4.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python-module/datetime_test.py" afterPath="$PROJECT_DIR$/python-module/datetime_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrapy-learn/scrapy-note.md" afterPath="$PROJECT_DIR$/scrapy-learn/scrapy-note.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrapy-learn/tutorial/tutorial/spiders/quotes_spider.py" afterPath="$PROJECT_DIR$/scrapy-learn/tutorial/tutorial/spiders/quotes_spider.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrapy-learn/tutorial/tutorial/spiders/user_spider_arg.py" afterPath="$PROJECT_DIR$/scrapy-learn/tutorial/tutorial/spiders/user_spider_arg.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_spider_arg.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user_spider_arg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrapy-learn/tutorial/tutorial/spiders/user_spider_arg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            <state relative-caret-position="228">
+              <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -65,6 +56,19 @@
             <state relative-caret-position="190">
               <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="standford-university_machine-learing_note.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/machine-learning/standford-university_machine-learing_note.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="228">
+                <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -117,6 +121,7 @@
         <option value="$PROJECT_DIR$/scrapy-learn/tutorial/tutorial/spiders/user_spider_arg.py" />
         <option value="$PROJECT_DIR$/scrapy-learn/tutorial/argument-humor.json" />
         <option value="$PROJECT_DIR$/scrapy-learn/scrapy-note.md" />
+        <option value="$PROJECT_DIR$/machine-learning/standford-university_machine-learing_note.md" />
       </list>
     </option>
   </component>
@@ -901,14 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scrapy-learn/tutorial/tutorial/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scrapy-learn/tutorial/tutorial/spiders/quotes_spider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -938,9 +935,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scrapy-learn/tutorial/tutorial/spiders/user_spider_arg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        <state relative-caret-position="228">
+          <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrapy-learn/tutorial/tutorial/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machine-learning/standford-university_machine-learing_note.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="228">
+            <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
