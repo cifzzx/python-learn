@@ -2,5 +2,5 @@
 .gitignore
 .idea
 .xml
-io/__init__.pyc
-
+*.pyc
+__pycache__/
