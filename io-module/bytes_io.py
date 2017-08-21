@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import os, sys
 from io import BytesIO
 
 b = BytesIO()
