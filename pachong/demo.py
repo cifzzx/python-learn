@@ -1,4 +1,4 @@
-import urllib2
+import urllib3
 
-response = urllib2.urlopen("http://www.baidu.com")
-print response.read()
+response = urllib3.urlopen("http://www.baidu.com")
+print(response.read())
