@@ -1,84 +1,98 @@
 import os
+
 import numpy as np
 from matplotlib import pyplot as pl
 
 path = os.path.dirname(os.path.realpath(__file__)) + '/train_data.txt'
 alpha = 0.0001
 epsilon = 0.000001
-x_list = []
-y_list = []
 
 
-def build_data_list(file_path):
+def build_matrix(file_path):
     with open(file_path, 'r') as f:
-        while True:
-            line = f.readline()
-            if line == '':
-                break
-            x_list.append(float(line.split(',')[0]))
-            y_list.append(float(line.split(',')[1]))
+        data_lines = f.readlines()
+        total_lines = len(data_lines)
+        train_matrix = np.zeros((total_lines, 2))
+        index = 0
+        for line in data_lines:
+            train_matrix[index, :] = line.split(',')
+            index += 1
 
-    return x_list, y_list
-
-
-def h_x(theta, x):
-    return theta * x
+    return train_matrix
 
 
-def cost_function(theta):
-    m = len(x_list)
+def h_x(theta0, theta1, x):
+    return theta0 + theta1 * x
+
+
+def cost_function(theta0, theta1):
+    m = matrix.shape[0]
     cost_sum = 0.
-
-    for index in range(m):
-
-        cost_sum += (h_x(theta, x_list[index]) - y_list[index]) ** 2
+    for data in matrix:
+        cost_sum += (h_x(theta0, theta1, data[0]) - data[1]) ** 2
 
     return cost_sum / (2 * m)
 
 
-def pd_theta(theta):
-    m = len(x_list)
-    gd_sum = 0.
+def pd_theta0(theta0, theta1):
+    m = matrix.shape[0]
+    pd_sum = 0.
+    for data in matrix:
+        pd_sum += (h_x(theta0, theta1, data[0]) - data[1])
 
-    for index in range(m):
-        gd_sum += (h_x(theta, x_list[index]) - y_list[index]) * x_list[i]
+    return pd_sum / m
 
-    return gd_sum / m
+
+def pd_theta1(theta0, theta1):
+    m = matrix.shape[0]
+    pd_sum = 0.
+    for data in matrix:
+        pd_sum += (h_x(theta0, theta1, data[0]) - data[1]) * data[0]
+
+    return pd_sum / m
 
 
 def gradient_descent():
-    theta = 0.
-    cost = cost_function(theta)
-    count = 0
+    theta0 = 0.
+    theta1 = 0.
+    cost = cost_function(theta0, theta1)
+    print('first time cost: ', cost)
     while True:
-        if count > len(x_list):
+        count = 0
+        if count > matrix.shape[0]:
             break
 
-        theta -= alpha * pd_theta(theta)
+        temp_theta0 = theta0 - alpha * pd_theta0(theta0, theta1)
+        temp_theta1 = theta1 - alpha * pd_theta1(theta0, theta1)
 
-        current_cost = cost_function(theta)
+        theta0 = temp_theta0
+        theta1 = temp_theta1
+
+        current_cost = cost_function(theta0, theta1)
+        print('current_cost: ', current_cost)
 
         if abs(current_cost - cost) < epsilon:
             break
         else:
             cost = current_cost
         count += 1
-    return theta
 
+    return theta0, theta1
 
 if __name__ == '__main__':
-    x_list, y_list = build_data_list(path)
-    p1 = gradient_descent()
+    matrix = build_matrix(path)
+    p0, p1 = gradient_descent()
 
-    X = np.linspace(0, 25, 2, endpoint=False)
+    X = np.linspace(0, 25, 2, endpoint=True)
     Y = np.ones((len(X), 1))
     i = 0
     for x in X:
-        Y[i] = h_x(p1, x)
+        Y[i] = h_x(p0, p1, x)
         i += 1
 
     pl.plot(X, Y)
-    pl.plot(x_list, y_list, 'o')
+    pl.plot(matrix[:, 0], matrix[:, 1], 'o')
     pl.show()
 
-    print(p1 * 5.4369)
+    print('theta0: ', p0, 'theta1: ', p1)
+    print('predict: ', h_x(p0, p1, 5.2524))
